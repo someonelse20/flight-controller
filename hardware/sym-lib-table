@@ -1,4 +1,4 @@
 (sym_lib_table
   (version 7)
-  (lib (name "Imports")(type "KiCad")(uri "${KIPRJMOD}/lib/Imports.kicad_sym")(options "")(descr ""))
+  (lib (name "Flight-Controller_Imports")(type "KiCad")(uri "${KIPRJMOD}/lib/Flight-Controller_Imports.kicad_sym")(options "")(descr ""))
 )
