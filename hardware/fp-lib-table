@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/lib/footprints.pretty")(options "")(descr "")(disabled))
+  (lib (name "lib")(type "KiCad")(uri "${KIPRJMOD}/lib.pretty")(options "")(descr "")(disabled))
+  (lib (name "Flight-Controller_Imports")(type "KiCad")(uri "${KIPRJMOD}/lib/Flight-Controller_Imports.pretty")(options "")(descr ""))
+)
