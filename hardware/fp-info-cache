@@ -1,4 +1,4 @@
-10630646884366
+12403747763274
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -61610,6 +61610,13 @@ Flight-Controller_Imports
 IND_SRP4030FA_BRN
 
 SRP4030FA-3R3M 
+0
+2
+2
+Flight-Controller_Imports
+SPKR_PKMCS0909E4000-R1
+
+
 0
 2
 2
