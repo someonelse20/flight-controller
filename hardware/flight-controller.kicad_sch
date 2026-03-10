@@ -12675,7 +12675,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 247.65) (xy 147.32 246.38)
+			(xy 139.7 243.84) (xy 139.7 242.57)
 		)
 		(stroke
 			(width 0)
@@ -13595,7 +13595,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 241.3) (xy 140.97 241.3)
+			(xy 125.73 237.49) (xy 133.35 237.49)
 		)
 		(stroke
 			(width 0)
@@ -13805,7 +13805,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 246.38) (xy 149.86 246.38)
+			(xy 139.7 242.57) (xy 142.24 242.57)
 		)
 		(stroke
 			(width 0)
@@ -14015,7 +14015,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 241.3) (xy 149.86 241.3)
+			(xy 140.97 237.49) (xy 142.24 237.49)
 		)
 		(stroke
 			(width 0)
@@ -15804,7 +15804,7 @@
 		(uuid "b67c3c79-065e-4836-b362-7bb68ae37d9f")
 	)
 	(label "BUZZER"
-		(at 133.35 241.3 0)
+		(at 125.73 237.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -23676,7 +23676,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 247.65 0)
+		(at 139.7 243.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23684,7 +23684,7 @@
 		(dnp no)
 		(uuid "9640e845-9833-4dac-8013-571e25a0d7f1")
 		(property "Reference" "#PWR0100"
-			(at 147.32 254 0)
+			(at 139.7 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23693,7 +23693,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 147.32 251.46 0)
+			(at 139.7 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23701,7 +23701,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 247.65 0)
+			(at 139.7 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23710,7 +23710,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 247.65 0)
+			(at 139.7 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23719,7 +23719,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 147.32 247.65 0)
+			(at 139.7 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24503,7 +24503,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 144.78 241.3 90)
+		(at 137.16 237.49 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24511,7 +24511,7 @@
 		(dnp no)
 		(uuid "a06ba347-080e-430c-b3b5-43337657efe8")
 		(property "Reference" "R28"
-			(at 144.78 237.49 90)
+			(at 137.16 233.68 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24519,7 +24519,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 144.78 239.268 90)
+			(at 137.16 235.458 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24527,7 +24527,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 144.78 243.078 90)
+			(at 137.16 239.268 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24536,7 +24536,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 144.78 241.3 0)
+			(at 137.16 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24545,7 +24545,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 144.78 241.3 0)
+			(at 137.16 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29713,16 +29713,15 @@
 	)
 	(symbol
 		(lib_id "Device:Buzzer")
-		(at 152.4 243.84 0)
+		(at 144.78 240.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ee6361c2-e17c-4d3a-a4d2-ae81258b94cd")
 		(property "Reference" "BZ1"
-			(at 156.21 242.5699 0)
+			(at 144.526 231.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29730,8 +29729,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Buzzer"
-			(at 156.21 245.1099 0)
+		(property "Value" "PKMCS0909E4000-R1"
+			(at 140.97 234.696 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29740,7 +29739,7 @@
 			)
 		)
 		(property "Footprint" "Flight-Controller_Imports:SPKR_PKMCS0909E4000-R1"
-			(at 151.765 241.3 90)
+			(at 144.145 237.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29749,7 +29748,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 151.765 241.3 90)
+			(at 144.145 237.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29758,7 +29757,7 @@
 			)
 		)
 		(property "Description" "Buzzer, polarized"
-			(at 152.4 243.84 0)
+			(at 144.78 240.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
