@@ -1003,6 +1003,17 @@
 			(uuid "96e9179b-8961-45c6-acee-a1bbbc1006d9")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/lib/Flight-Controller_Imports.3dshapes/MS621FE-FL11E.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
 		(layer "F.Cu")
@@ -2346,6 +2357,17 @@
 			(uuid "8bde4268-a453-4658-8e94-420b9c65bfd5")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/lib/Flight-Controller_Imports.3dshapes/PKMCS0909E4000-R1.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5"
 		(layer "F.Cu")
