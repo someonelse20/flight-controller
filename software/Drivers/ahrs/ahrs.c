@@ -163,10 +163,7 @@ void update_ahrs(ahrs_t *ahrs, vector_t gyro, vector_t accel, vector_t mag, cons
 	quaternion_t orientation_declination = ahrs->orientation;
 
 	if (ahrs->settings.add_declination) {
-		quaternion_t declination = euler_to_quaternion(
-			(vector_t) {
-			0, 0, ahrs->settings.declination * (M_PI / 180)
-		});
+		quaternion_t declination = euler_to_quaternion((vector_t) {0, 0, ahrs->settings.declination * (M_PI / 180)});
 		orientation_declination = quaternion_product(ahrs->orientation, declination);
 	}
 

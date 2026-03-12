@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.22)
+
+project(
+    ahrs_library
+	DESCRIPTION "Altitude heading reference system library"
+    LANGUAGES C
+)
+
+# Add sources to executable
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user sources here
+	main.c
+	ahrs.c
+	ahrs_math.c
+)
+
+# Add linked libraries
+target_link_libraries(${CMAKE_PROJECT_NAME}
+	m # math.h library
+)
+
+# install(EXPORT Sx126xDriverTargets
+#     FILE Sx126xDriverConfig.cmake
+#     NAMESPACE sx126x_driver::
+#     DESTINATION lib/cmake/Sx126x
+# )
+
+export(TARGETS ahrs_library NAMESPACE ahrs_library:: FILE ahrsLibraryTargets.cmake)
