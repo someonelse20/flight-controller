@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "ahrs.h"
+#include "pid.h"
 
 /* USER CODE END Includes */
 
