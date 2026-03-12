@@ -15701,6 +15701,16 @@
 		)
 		(uuid "63ae87cb-9117-4e6b-af57-11ab4f344875")
 	)
+	(label "USB_-"
+		(at 57.15 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "65a8282b-8ced-4b1e-aa07-295cf289dea5")
+	)
 	(label "HSE_IN"
 		(at 123.19 134.62 0)
 		(effects
@@ -15780,6 +15790,16 @@
 			(justify left bottom)
 		)
 		(uuid "76865f54-3e3e-4cf3-81c7-82418edf8ec0")
+	)
+	(label "USB_+"
+		(at 57.15 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "77b481d1-b1ed-4605-aa85-ece410e1a909")
 	)
 	(label "GPS_RX"
 		(at 270.51 201.93 180)
@@ -15950,16 +15970,6 @@
 			(justify left bottom)
 		)
 		(uuid "9b9d03ca-8fde-472b-8297-686c8d9c84da")
-	)
-	(label "USB_+"
-		(at 57.15 50.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9c033284-e53c-4b64-b566-f36a0059c320")
 	)
 	(label "SDA"
 		(at 332.74 161.29 0)
@@ -16250,16 +16260,6 @@
 			(justify right bottom)
 		)
 		(uuid "e2ee42c0-0c5e-490f-8bea-d94ed969c88d")
-	)
-	(label "USB_-"
-		(at 57.15 55.88 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "e3fb364d-bc3e-458c-be50-1e9840bb4d90")
 	)
 	(label "UART7_RX"
 		(at 323.85 46.99 0)

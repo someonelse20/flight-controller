@@ -1,4 +1,4 @@
-27226107106125900
+27250275427287640
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -62432,6 +62432,13 @@ SRP4030FA-3R3M
 0
 2
 2
+Flight-Controller_Imports
+SPKR_PKMCS0909E4000-R1
+
+
+0
+2
+2
 Fuse
 FuseHolder_Blade_ATO_Littelfuse_FLR_178.6165
 Littelfuse fuse holder for ATO/FKS blade fuses, 80V, vertical, 20 x 6mm, PCB thickness up to 1.5mm, http://www.littelfuse.com/~/media/commercial-vehicle/datasheets/automotive-fuse-holders/ato/littelfuse-fuse-holder-ato-flr-pcb-datasheet.pdf
@@ -107925,10 +107932,3 @@ Varistor VF
 0
 2
 2
-custom
-ESP32-S3-Super-Mini
-Through hole straight pin header, 1x09, 2.54mm pitch, single row
-Through hole pin header THT 1x09 2.54mm single row
-0
-18
-18
