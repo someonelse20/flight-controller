@@ -24,13 +24,16 @@
 
 #include "ahrs.h"
 #include "pid.h"
+#include "stm32h723xx.h"
+#include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_tim.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PDF */
+/* USER CODE BEGIN PTD */
 
-/* USER CODE END PDF */
+/* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
@@ -83,6 +86,11 @@ static void MX_USART1_UART_Init(void);
 static void MX_UART7_Init(void);
 static void MX_I2C2_Init(void);
 /* USER CODE BEGIN PFP */
+
+static void esc_start_all();
+static void esc_stop_all();
+static void esc_set_all();
+static void esc_calibrate();
 
 /* USER CODE END PFP */
 
@@ -137,6 +145,8 @@ int main(void)
 	MX_I2C2_Init();
 	/* USER CODE BEGIN 2 */
 
+	esc_start_all();
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -144,6 +154,11 @@ int main(void)
 	while (1)
 	{
 		/* USER CODE END WHILE */
+
+		TIM4->CCR1 = 0;
+		TIM4->CCR2 = 0;
+		TIM4->CCR3 = 0;
+		TIM4->CCR4 = 0;
 
 		/* USER CODE BEGIN 3 */
 	}
@@ -474,9 +489,9 @@ static void MX_TIM4_Init(void)
 
 	/* USER CODE END TIM4_Init 1 */
 	htim4.Instance = TIM4;
-	htim4.Init.Prescaler = 0;
+	htim4.Init.Prescaler = 255;
 	htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-	htim4.Init.Period = 65535;
+	htim4.Init.Period = 4999;
 	htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
 	htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 	if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
@@ -875,6 +890,37 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+static void esc_start_all() {
+	HAL_TIM_PWM_Start(&htim4, 1);
+	HAL_TIM_PWM_Start(&htim4, 2);
+	HAL_TIM_PWM_Start(&htim4, 3);
+	HAL_TIM_PWM_Start(&htim4, 4);
+}
+
+static void esc_stop_all() {
+	HAL_TIM_PWM_Stop(&htim4, 1);
+	HAL_TIM_PWM_Stop(&htim4, 2);
+	HAL_TIM_PWM_Stop(&htim4, 3);
+	HAL_TIM_PWM_Stop(&htim4, 4);
+}
+
+static void esc_set_all(uint32_t duty_cycle) {
+	TIM4->CCR1 = duty_cycle;
+	TIM4->CCR2 = duty_cycle;
+	TIM4->CCR3 = duty_cycle;
+	TIM4->CCR4 = duty_cycle;
+}
+
+static void esc_calibrate() {
+	esc_set_all(100);
+	HAL_Delay(2);
+
+	esc_set_all(50);
+	HAL_Delay(1);
+
+	esc_set_all(0);
+}
 
 /* USER CODE END 4 */
 
