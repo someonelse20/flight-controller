@@ -1,3 +1,6 @@
 [submodule "software/software/Lib/lsm6dso-pid"]
 	path = software/software/Lib/lsm6dso-pid
 	url = https://github.com/STMicroelectronics/lsm6dso-pid.git
+[submodule "software/software/Lib/MMC5983-STM32-HAL-Driver"]
+	path = software/software/Lib/MMC5983-STM32-HAL-Driver
+	url = https://github.com/someonelse20/MMC5983-STM32-HAL-Driver

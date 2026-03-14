@@ -38,17 +38,29 @@ add_subdirectory(cmake/stm32cubemx)
 
 # Link directories setup
 target_link_directories(
-  ${CMAKE_PROJECT_NAME} PRIVATE # Add user defined library search paths
+	${CMAKE_PROJECT_NAME} PRIVATE # Add user defined library search paths
+	Core/Inc/sensor.h
 )
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE # Add user sources here
+	Core/Src/sensor.c
+
+	Lib/ahrs/ahrs.c
+	Lib/ahrs/ahrs_math.c
+	Lib/pid/pid.c
+	Lib/lsm6dso-pid/lsm6dso_reg.c
+	Lib/MMC5983-STM32-HAL-Driver/MMC5983.c
 )
 
 # Add include paths
 target_include_directories(
-  ${CMAKE_PROJECT_NAME} PRIVATE # Add user defined include paths
-                                Lib/ahrs Lib/pid)
+	${CMAKE_PROJECT_NAME} PRIVATE # Add user defined include paths
+	Lib/ahrs
+	Lib/pid
+	Lib/lsm6dso-pid
+	Lib/MMC5983-STM32-HAL-Driver
+)
 
 # Add project symbols (macros)
 target_compile_definitions(

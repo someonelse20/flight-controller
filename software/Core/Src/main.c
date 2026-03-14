@@ -22,11 +22,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "ahrs.h"
 #include "pid.h"
+#include "sensor.h"
 #include "stm32h723xx.h"
 #include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_def.h"
+#include "stm32h7xx_hal_spi.h"
 #include "stm32h7xx_hal_tim.h"
+#include <stdint.h>
 
 /* USER CODE END Includes */
 
@@ -67,6 +70,23 @@ PCD_HandleTypeDef hpcd_USB_OTG_HS;
 
 /* USER CODE BEGIN PV */
 
+// IMU PV
+stmdev_ctx_t imu;
+
+// MAG PV
+MMC5983_HW_InitTypeDef mag_h = {
+	.I2C_handler = &hi2c1,
+	.I2C_Timeout = HAL_TIMEOUT
+};
+
+vector_t gyro;
+vector_t accel;
+vector_t mag;
+float bmp_alt;
+float imu_temp;
+float mag_temp;
+float bmp_temp;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,10 +107,11 @@ static void MX_UART7_Init(void);
 static void MX_I2C2_Init(void);
 /* USER CODE BEGIN PFP */
 
+// ESC functions
+static void esc_set_all(uint32_t duty_cycle);
+static void esc_calibrate();
 static void esc_start_all();
 static void esc_stop_all();
-static void esc_set_all();
-static void esc_calibrate();
 
 /* USER CODE END PFP */
 
@@ -107,6 +128,11 @@ int main(void)
 {
 
 	/* USER CODE BEGIN 1 */
+
+	imu.write_reg = platform_write;
+	imu.read_reg = platform_read;
+	imu.mdelay = platform_delay;
+	imu.handle = &hspi1;
 
 	/* USER CODE END 1 */
 
@@ -147,6 +173,30 @@ int main(void)
 
 	esc_start_all();
 
+	// IMU Init
+	platform_delay(LSM6DSO_BOOT_TIME);
+
+	uint8_t whoami, rst;
+	if (lsm6dso_device_id_get(&imu, &whoami) != LSM6DSO_ID) {
+		Error_Handler();
+	}
+
+	/* Restore default imu configuration */
+	lsm6dso_reset_set(&imu, PROPERTY_ENABLE);
+
+	do {
+		lsm6dso_reset_get(&imu, &rst);
+	} while (rst);
+
+	set_imu(&imu);
+
+	// MAG Init
+	if (MMC5983_ID_Verify(&mag_h) != MMC_NO_ERROR) {
+		Error_Handler();
+	}
+
+	set_mag(&mag_h);
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -155,12 +205,21 @@ int main(void)
 	{
 		/* USER CODE END WHILE */
 
+		/* USER CODE BEGIN 3 */
+
+		// Run loop only if new imu data is available
+		lsm6dso_status_reg_t status;
+		do {
+			lsm6dso_status_reg_get(&imu, &status);
+		} while (!status.gda || !status.xlda);
+
+		read_imu(&imu, &gyro, &accel, &imu_temp, status);
+
+		// Write duty cycle to ESCs
 		TIM4->CCR1 = 0;
 		TIM4->CCR2 = 0;
 		TIM4->CCR3 = 0;
 		TIM4->CCR4 = 0;
-
-		/* USER CODE BEGIN 3 */
 	}
 	/* USER CODE END 3 */
 }
@@ -310,7 +369,7 @@ static void MX_I2C1_Init(void)
 
 	/* USER CODE END I2C1_Init 1 */
 	hi2c1.Instance = I2C1;
-	hi2c1.Init.Timing = 0x00707CBB;
+	hi2c1.Init.Timing = 0x00300F38;
 	hi2c1.Init.OwnAddress1 = 0;
 	hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
 	hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
@@ -847,7 +906,7 @@ static void MX_GPIO_Init(void)
 
 	/*Configure GPIO pins : PC4 PC5 */
 	GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5;
-	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
@@ -858,9 +917,9 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-	/*Configure GPIO pins : PB13 PB3 PB4 PB5 */
-	GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5;
-	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	/*Configure GPIO pin : PB13 */
+	GPIO_InitStruct.Pin = GPIO_PIN_13;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
@@ -877,6 +936,18 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+	/*Configure GPIO pins : PD6 PD7 */
+	GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : PB3 */
+	GPIO_InitStruct.Pin = GPIO_PIN_3;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
 	/*Configure GPIO pin : PE0 */
 	GPIO_InitStruct.Pin = GPIO_PIN_0;
 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -884,12 +955,28 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
+	/* EXTI interrupt init*/
+	HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+	HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 	/* USER CODE BEGIN MX_GPIO_Init_2 */
 
 	/* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if(GPIO_Pin == MMC5983_INT_PIN){
+		read_mag(&mag_h, &mag);
+	}
+}
 
 static void esc_start_all() {
 	HAL_TIM_PWM_Start(&htim4, 1);
