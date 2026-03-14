@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ahrs.h"
 #include "fatfs.h"
 
 /* Private includes ----------------------------------------------------------*/
