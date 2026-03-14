@@ -108,12 +108,6 @@ void read_mag(MMC5983_HW_InitTypeDef *mag_h, vector_t *mag) {
 }
 
 uint8_t bmp_init(bmp384_handle_t *bmp_h) {
-	bmp_h->iic_init = bmp384_interface_iic_init;
-	bmp_h->iic_deinit = bmp384_interface_iic_deinit;
-	bmp_h->iic_read = bmp384_interface_iic_read;
-	bmp_h->iic_write = bmp384_interface_iic_write;
-	bmp_h->delay_ms = HAL_Delay;
-
 	bmp384_set_interface(bmp_h, BMP384_INTERFACE_IIC);
 	bmp384_set_addr_pin(bmp_h, BMP384_ADDRESS_ADO_LOW);
 
