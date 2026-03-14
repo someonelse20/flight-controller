@@ -1,12 +1,9 @@
-[submodule "software/software/Lib/lsm6dso-pid"]
-	path = software/software/Lib/lsm6dso-pid
+[submodule "software/Lib/lsm6dso-pid"]
+	path = software/Lib/lsm6dso-pid
 	url = https://github.com/STMicroelectronics/lsm6dso-pid.git
-[submodule "software/software/Lib/MMC5983-STM32-HAL-Driver"]
-	path = software/software/Lib/MMC5983-STM32-HAL-Driver
+[submodule "software/Lib/MMC5983-STM32-HAL-Driver"]
+	path = software/Lib/MMC5983-STM32-HAL-Driver
 	url = https://github.com/someonelse20/MMC5983-STM32-HAL-Driver
 [submodule "software/Lib/bmp384"]
 	path = software/Lib/bmp384
 	url = https://github.com/libdriver/bmp384.git
-[submodule "software/Lib/STM32-GNSS"]
-	path = software/Lib/STM32-GNSS
-	url = https://github.com/SimpleMethod/STM32-GNSS.git
