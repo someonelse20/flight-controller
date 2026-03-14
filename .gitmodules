@@ -4,3 +4,6 @@
 [submodule "software/software/Lib/MMC5983-STM32-HAL-Driver"]
 	path = software/software/Lib/MMC5983-STM32-HAL-Driver
 	url = https://github.com/someonelse20/MMC5983-STM32-HAL-Driver
+[submodule "software/Lib/bmp384"]
+	path = software/Lib/bmp384
+	url = https://github.com/libdriver/bmp384.git

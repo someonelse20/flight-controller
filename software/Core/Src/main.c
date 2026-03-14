@@ -22,11 +22,13 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "driver_bmp384.h"
 #include "pid.h"
 #include "sensor.h"
 #include "stm32h723xx.h"
 #include "stm32h7xx_hal.h"
 #include "stm32h7xx_hal_def.h"
+#include "stm32h7xx_hal_i2c.h"
 #include "stm32h7xx_hal_spi.h"
 #include "stm32h7xx_hal_tim.h"
 #include <stdint.h>
@@ -71,7 +73,7 @@ PCD_HandleTypeDef hpcd_USB_OTG_HS;
 /* USER CODE BEGIN PV */
 
 // IMU PV
-stmdev_ctx_t imu;
+stmdev_ctx_t imu_h;
 
 // MAG PV
 MMC5983_HW_InitTypeDef mag_h = {
@@ -79,13 +81,16 @@ MMC5983_HW_InitTypeDef mag_h = {
 	.I2C_Timeout = HAL_TIMEOUT
 };
 
+// BMP PV
+bmp384_handle_t bmp_h;
+
 vector_t gyro;
 vector_t accel;
 vector_t mag;
-float bmp_alt;
 float imu_temp;
 float mag_temp;
-float bmp_temp;
+float pressure;
+float temp;
 
 /* USER CODE END PV */
 
@@ -129,10 +134,10 @@ int main(void)
 
 	/* USER CODE BEGIN 1 */
 
-	imu.write_reg = platform_write;
-	imu.read_reg = platform_read;
-	imu.mdelay = platform_delay;
-	imu.handle = &hspi1;
+	imu_h.write_reg = platform_write;
+	imu_h.read_reg = platform_read;
+	imu_h.mdelay = platform_delay;
+	imu_h.handle = &hspi1;
 
 	/* USER CODE END 1 */
 
@@ -177,25 +182,29 @@ int main(void)
 	platform_delay(LSM6DSO_BOOT_TIME);
 
 	uint8_t whoami, rst;
-	if (lsm6dso_device_id_get(&imu, &whoami) != LSM6DSO_ID) {
+	if (lsm6dso_device_id_get(&imu_h, &whoami) != LSM6DSO_ID) {
 		Error_Handler();
 	}
 
-	/* Restore default imu configuration */
-	lsm6dso_reset_set(&imu, PROPERTY_ENABLE);
+	lsm6dso_reset_set(&imu_h, PROPERTY_ENABLE);
 
 	do {
-		lsm6dso_reset_get(&imu, &rst);
+		lsm6dso_reset_get(&imu_h, &rst);
 	} while (rst);
 
-	set_imu(&imu);
+	imu_init(&imu_h);
 
 	// MAG Init
 	if (MMC5983_ID_Verify(&mag_h) != MMC_NO_ERROR) {
 		Error_Handler();
 	}
 
-	set_mag(&mag_h);
+	mag_init(&mag_h);
+
+	// BMP Init
+	if (bmp_init(&bmp_h) != 0) {
+		Error_Handler();
+	}
 
 	/* USER CODE END 2 */
 
@@ -210,10 +219,10 @@ int main(void)
 		// Run loop only if new imu data is available
 		lsm6dso_status_reg_t status;
 		do {
-			lsm6dso_status_reg_get(&imu, &status);
+			lsm6dso_status_reg_get(&imu_h, &status);
 		} while (!status.gda || !status.xlda);
 
-		read_imu(&imu, &gyro, &accel, &imu_temp, status);
+		read_imu(&imu_h, &gyro, &accel, &imu_temp, status);
 
 		// Write duty cycle to ESCs
 		TIM4->CCR1 = 0;
@@ -976,6 +985,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if(GPIO_Pin == MMC5983_INT_PIN){
 		read_mag(&mag_h, &mag);
 	}
+
+	if (GPIO_Pin == BMP384_INT_PIN) {
+		read_bmp(&bmp_h, &pressure, &temp);
+	}
 }
 
 static void esc_start_all() {
@@ -1007,6 +1020,10 @@ static void esc_calibrate() {
 	HAL_Delay(1);
 
 	esc_set_all(0);
+}
+
+I2C_HandleTypeDef get_hi2c_bmp() {
+	return hi2c1;
 }
 
 /* USER CODE END 4 */

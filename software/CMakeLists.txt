@@ -51,6 +51,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE # Add user sources here
 	Lib/pid/pid.c
 	Lib/lsm6dso-pid/lsm6dso_reg.c
 	Lib/MMC5983-STM32-HAL-Driver/MMC5983.c
+	Lib/bmp384/src/driver_bmp384.c
 )
 
 # Add include paths
@@ -60,6 +61,8 @@ target_include_directories(
 	Lib/pid
 	Lib/lsm6dso-pid
 	Lib/MMC5983-STM32-HAL-Driver
+	Lib/bmp384/src
+	Lib/bmp384/interface
 )
 
 # Add project symbols (macros)
