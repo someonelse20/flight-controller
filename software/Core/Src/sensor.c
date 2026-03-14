@@ -1,4 +1,5 @@
 #include "sensor.h"
+#include "GNSS.h"
 #include "driver_bmp384.h"
 #include "driver_bmp384_interface.h"
 #include "lsm6dso_reg.h"
@@ -173,5 +174,15 @@ uint8_t bmp384_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uint
 	}
 
 	return 0;
+}
+
+void read_gnss(GNSS_StateHandle *gnss_h) {
+	GNSS_GetUniqID(gnss_h);
+	GNSS_ParseBuffer(gnss_h);
+
+	HAL_Delay(250);
+
+	GNSS_GetPVTData(gnss_h);
+	GNSS_ParseBuffer(gnss_h);
 }
 

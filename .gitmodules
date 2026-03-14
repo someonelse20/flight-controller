@@ -7,3 +7,6 @@
 [submodule "software/Lib/bmp384"]
 	path = software/Lib/bmp384
 	url = https://github.com/libdriver/bmp384.git
+[submodule "software/Lib/STM32-GNSS"]
+	path = software/Lib/STM32-GNSS
+	url = https://github.com/SimpleMethod/STM32-GNSS.git

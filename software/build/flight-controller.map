@@ -2010,6 +2010,228 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 CMakeFiles/flight-controller.dir/Lib/bmp384/src/driver_bmp384.c.obj
  .debug_macro   0x00000000       0x3c CMakeFiles/flight-controller.dir/Lib/bmp384/src/driver_bmp384.c.obj
  .debug_macro   0x00000000       0x58 CMakeFiles/flight-controller.dir/Lib/bmp384/src/driver_bmp384.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .group         0x00000000        0xc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text          0x00000000        0x0 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .data          0x00000000        0x0 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .bss.GNSS_Handle
+                0x00000000       0xb0 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.configUBX
+                0x00000000       0x1c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setNMEA410
+                0x00000000       0x1c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setGNSS
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.getDeviceID
+                0x00000000        0x8 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.getNavigatorData
+                0x00000000        0x8 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.getPOSLLHData
+                0x00000000        0x8 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.getPVTData
+                0x00000000        0x8 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setPortableMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setStationaryMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setPedestrianMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setAutomotiveMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setAirbone1GMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setAirbone2GMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setAirbone4GMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setWirstMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setBikeMode
+                0x00000000       0x2c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .rodata.setPortableType
+                0x00000000        0x0 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .bss.uShort    0x00000000        0x2 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .bss.iShort    0x00000000        0x2 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .bss.uLong     0x00000000        0x4 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .bss.iLong     0x00000000        0x4 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_Init
+                0x00000000       0x92 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_ParseBuffer
+                0x00000000       0xce CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_GetUniqID
+                0x00000000       0x34 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_GetNavigatorData
+                0x00000000       0x34 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_GetPOSLLHData
+                0x00000000       0x34 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_GetPVTData
+                0x00000000       0x34 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_ParseUniqID
+                0x00000000       0x44 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_SetMode
+                0x00000000      0x128 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_ParsePVTData
+                0x00000000      0x2c8 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_ParseNavigatorData
+                0x00000000       0x6c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_ParsePOSLLHData
+                0x00000000      0x178 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_LoadConfig
+                0x00000000       0x58 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .text.GNSS_Checksum
+                0x00000000       0x22 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_info    0x00000000      0xf7d CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_abbrev  0x00000000      0x28c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_aranges
+                0x00000000       0x80 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_rnglists
+                0x00000000       0x60 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x347 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0xaf6 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x250 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x3b CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x8e CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x51 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x103 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x6a CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x1df CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0xfb CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000     0x1313 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x11f CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000    0x216c1 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x6d CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000     0x3d64 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x190 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x74 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x29 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x3c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x34 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x364 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x16 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x4a CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x34 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x58 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x1e5 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x19b CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x5d CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000     0x2462 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000     0x1079 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x154 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x114 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x3fc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0xac CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x788 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x228 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x66 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x3a6 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x3f9 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x275 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000     0x1178 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x7c8 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x3bb CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x3ca CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x45c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x3c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x4a CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x22c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x67 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0xa5 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x1c4 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x22a CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x35 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0xa0c CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x16 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x1ce CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x5e4 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0xc1 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0xb24 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x29f CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x693 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0xa6 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x2b6 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000       0x90 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_macro   0x00000000      0x5f2 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_line    0x00000000      0xd0a CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_str     0x00000000   0x166ffd CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .comment       0x00000000       0x1f CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .debug_frame   0x00000000      0x1fc CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
+ .ARM.attributes
+                0x00000000       0x32 CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
  .group         0x00000000        0xc cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h7xx.c.obj
  .group         0x00000000        0xc cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h7xx.c.obj
  .group         0x00000000        0xc cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h7xx.c.obj
@@ -9694,6 +9916,7 @@ LOAD CMakeFiles/flight-controller.dir/Lib/pid/pid.c.obj
 LOAD CMakeFiles/flight-controller.dir/Lib/lsm6dso-pid/lsm6dso_reg.c.obj
 LOAD CMakeFiles/flight-controller.dir/Lib/MMC5983-STM32-HAL-Driver/MMC5983.c.obj
 LOAD CMakeFiles/flight-controller.dir/Lib/bmp384/src/driver_bmp384.c.obj
+LOAD CMakeFiles/flight-controller.dir/Lib/STM32-GNSS/GNSS.c.obj
 LOAD cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32h7xx.c.obj
 LOAD cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c.obj
 LOAD cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c.obj

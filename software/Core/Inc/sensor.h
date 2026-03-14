@@ -2,6 +2,7 @@
 #define SENSOR_H
 
 #include "ahrs.h"
+#include "GNSS.h"
 #include "MMC5983.h"
 #include "lsm6dso_reg.h"
 #include "driver_bmp384.h"
@@ -35,8 +36,7 @@ uint8_t bmp384_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uint
 
 I2C_HandleTypeDef get_hi2c_bmp();
 
-// NEO-M9N functions
-void gps_init();
-void read_gps();
+// GNSS functions
+void read_gnss(GNSS_StateHandle *gnss_h);
 
 #endif

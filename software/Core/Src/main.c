@@ -22,7 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "driver_bmp384.h"
 #include "pid.h"
 #include "sensor.h"
 #include "stm32h723xx.h"
@@ -83,6 +82,9 @@ MMC5983_HW_InitTypeDef mag_h = {
 
 // BMP PV
 bmp384_handle_t bmp_h;
+
+// GNSS PV
+GNSS_StateHandle gnss_h;
 
 vector_t gyro;
 vector_t accel;
@@ -176,8 +178,6 @@ int main(void)
 	MX_I2C2_Init();
 	/* USER CODE BEGIN 2 */
 
-	esc_start_all();
-
 	// IMU Init
 	platform_delay(LSM6DSO_BOOT_TIME);
 
@@ -206,15 +206,29 @@ int main(void)
 		Error_Handler();
 	}
 
+	// GNSS Init
+	GNSS_Init(&gnss_h, &huart1);
+	HAL_Delay(1000);
+	GNSS_LoadConfig(&gnss_h);
+
+	esc_start_all();
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
+	uint32_t gnss_timer = HAL_GetTick();
 	while (1)
 	{
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
+
+		// Poll data ever 1000 ticks since gnss module doesn't have an interrupt pin
+		if ((HAL_GetTick() - gnss_timer) > 1000) {
+			read_gnss(&gnss_h);
+			gnss_timer = HAL_GetTick();
+		}
 
 		// Run loop only if new imu data is available
 		lsm6dso_status_reg_t status;
@@ -720,7 +734,7 @@ static void MX_USART1_UART_Init(void)
 
 	/* USER CODE END USART1_Init 1 */
 	huart1.Instance = USART1;
-	huart1.Init.BaudRate = 115200;
+	huart1.Init.BaudRate = 38400;
 	huart1.Init.WordLength = UART_WORDLENGTH_8B;
 	huart1.Init.StopBits = UART_STOPBITS_1;
 	huart1.Init.Parity = UART_PARITY_NONE;
@@ -928,8 +942,10 @@ static void MX_GPIO_Init(void)
 
 	/*Configure GPIO pin : PB13 */
 	GPIO_InitStruct.Pin = GPIO_PIN_13;
-	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	GPIO_InitStruct.Alternate = GPIO_AF15_EVENTOUT;
 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 	/*Configure GPIO pin : PA15 */
@@ -970,9 +986,6 @@ static void MX_GPIO_Init(void)
 
 	HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-
-	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
-	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 	/* USER CODE BEGIN MX_GPIO_Init_2 */
 
