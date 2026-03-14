@@ -23,11 +23,11 @@ vector_t mag_rejection(ahrs_t *ahrs, vector_t mag) {
 vector_t accel_rejection(ahrs_t *ahrs, vector_t accel) {
 	// calculate the amount of time that the accelerometer measurement is unreliable
 	if (ahrs->accel_t_timestamp == 0)
-		ahrs->accel_t_timestamp = get_timestamp(1);
+		ahrs->accel_t_timestamp = get_timestamp();
 	if ((vector_norm(accel) - 1) > -ahrs->settings.accel_rejection && (vector_norm(accel) - 1) < ahrs->settings.accel_rejection)
 		ahrs->accel_t = 0;
 	else
-		ahrs->accel_t += get_timestamp(1) - ahrs->accel_t_timestamp;
+		ahrs->accel_t += get_timestamp() - ahrs->accel_t_timestamp;
 
 	if (ahrs->accel_t > ahrs->settings.accel_rejection_t) {
 		vector_t return_value;
@@ -69,12 +69,12 @@ vector_t calibrate_mag(vector_t mag, matrix_t alignment, matrix_t soft_iorn, vec
 }
 
 vector_t gyro_bias_calibration(float time, vector_t (*gyro_function)()) {
-	float timestamp = get_timestamp(1);
+	float timestamp = get_timestamp();
 
 	float x_avg = 0.0, y_avg = 0.0, z_avg = 0.0;
 	int len = 0;
 
-	while (get_timestamp(1) <= timestamp + time) {
+	while (get_timestamp() <= timestamp + time) {
 		vector_t gyro_data = gyro_function();
 
 		x_avg += gyro_data.x;
@@ -88,10 +88,10 @@ vector_t gyro_bias_calibration(float time, vector_t (*gyro_function)()) {
 }
 
 void initialize(ahrs_t *ahrs) {
-	ahrs->initialized = current_time(*ahrs) > ahrs->settings.init_time;
+	ahrs->initialized = ahrs->start_timestamp > ahrs->settings.init_time;
 
-	if (!ahrs->initialized)
-		ahrs->gain = ahrs->settings.gain_normal + (pow(ahrs->settings.init_time, -current_time(*ahrs)) / ahrs->settings.init_time) * (ahrs->settings.gain_init - ahrs->settings.gain_normal);
+	if (!ahrs->initialized) // TODO: See if - before ahrs.start_timestamp is typo
+		ahrs->gain = ahrs->settings.gain_normal + (pow(ahrs->settings.init_time, -ahrs->start_timestamp) / ahrs->settings.init_time) * (ahrs->settings.gain_init - ahrs->settings.gain_normal);
 	else
 		ahrs->gain = ahrs->settings.gain_normal;
 }
@@ -99,7 +99,7 @@ void initialize(ahrs_t *ahrs) {
 void update_ahrs(ahrs_t *ahrs, vector_t gyro, vector_t accel, vector_t mag, const float DT) {
 	// set timestamp
 	if (ahrs->start_timestamp == -1) {
-		ahrs->start_timestamp = get_timestamp(1);
+		ahrs->start_timestamp = get_timestamp();
 	}
 
 	initialize(ahrs);

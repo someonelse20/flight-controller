@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ahrs.h"
 #include "fatfs.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -44,6 +45,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+#define DT 10
 
 /* USER CODE END PD */
 
@@ -92,6 +95,7 @@ bmp384_handle_t bmp_h;
 // GNSS PV
 GNSS_StateHandle gnss_h;
 
+// Sensor PV
 vector_t gyro;
 vector_t accel;
 vector_t mag;
@@ -99,6 +103,32 @@ float imu_temp;
 float mag_temp;
 float pressure;
 float temp;
+
+// PID PV
+pid_t pid_x = {
+	1,
+	0,
+	0
+};
+pid_t pid_y = {
+	1,
+	0,
+	0
+};
+pid_t pid_z = {
+	0.1,
+	0,
+	0
+};
+
+// AHRS PV
+ahrs_t ahrs;
+
+// Input PV
+float throttle;
+float set_x;
+float set_y;
+float set_z;
 
 /* USER CODE END PV */
 
@@ -125,6 +155,8 @@ static void esc_set_all(uint32_t duty_cycle);
 static void esc_calibrate();
 static void esc_start_all();
 static void esc_stop_all();
+
+static float clamp(float value, float min, float max);
 
 /* USER CODE END PFP */
 
@@ -236,13 +268,15 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	uint32_t gnss_timer = HAL_GetTick();
+	ahrs.start_timestamp = HAL_GetTick();
 	while (1)
 	{
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+		uint32_t timestamp = HAL_GetTick();
 
-		// Poll data ever 1000 ticks since gnss module doesn't have an interrupt pin
+		// Poll data every second since gnss module doesn't have an interrupt pin
 		if ((HAL_GetTick() - gnss_timer) > 1000) {
 			read_gnss(&gnss_h);
 			gnss_timer = HAL_GetTick();
@@ -256,11 +290,22 @@ int main(void)
 
 		read_imu(&imu_h, &gyro, &accel, &imu_temp, status);
 
+		update_ahrs(&ahrs, gyro, accel, mag, DT);
+		vector_t orientation_euler = quaternion_to_euler(ahrs.orientation);
+
+		float pid_x_out = loop_pid(&pid_x, orientation_euler.x, set_x);
+		float pid_y_out = loop_pid(&pid_y, orientation_euler.y, set_y);
+		float pid_z_out = loop_pid(&pid_z, orientation_euler.z, set_z);
+
 		// Write duty cycle to ESCs
-		TIM4->CCR1 = 0;
-		TIM4->CCR2 = 0;
-		TIM4->CCR3 = 0;
-		TIM4->CCR4 = 0;
+		TIM4->CCR1 = clamp(throttle + pid_x_out + pid_y_out - pid_z_out, 0, 100);
+		TIM4->CCR2 = clamp(throttle - pid_x_out + pid_y_out + pid_z_out, 0, 100);
+		TIM4->CCR3 = clamp(throttle + pid_x_out - pid_y_out + pid_z_out, 0, 100);
+		TIM4->CCR4 = clamp(throttle - pid_x_out - pid_y_out - pid_z_out, 0, 100);
+
+		// Delay to keep DT constant
+		uint32_t time_elapsed = HAL_GetTick() - timestamp;
+		HAL_Delay(time_elapsed);
 	}
   /* USER CODE END 3 */
 }
@@ -1053,8 +1098,24 @@ static void esc_calibrate() {
 	esc_set_all(0);
 }
 
+static float clamp(float value, float min, float max) {
+	if (value < min) {
+		return min;
+	}
+
+	if (value > max) {
+		return max;
+	}
+
+	return value;
+}
+
 I2C_HandleTypeDef get_hi2c_bmp() {
 	return hi2c1;
+}
+
+float get_timestamp() {
+	return HAL_GetTick();
 }
 
 /* USER CODE END 4 */

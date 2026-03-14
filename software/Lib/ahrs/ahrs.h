@@ -3,27 +3,27 @@
 
 #include <stdbool.h>
 
-typedef struct quaternion_s {
+typedef struct {
 	float w, x, y, z;
 } quaternion_t;
 
-typedef struct vector_s {
+typedef struct {
 	float x, y, z;
 } vector_t;
 
-typedef struct matrix_s {
+typedef struct {
 	vector_t x, y, z;
 } matrix_t;
 
-typedef struct calibrate_s {
+typedef struct {
 	matrix_t rotation_matrix;
 	vector_t sensitivity;
 	vector_t bias;
 	matrix_t soft_iorn;
 	vector_t hard_iorn;
-} calibrate_t;
+} ahrs_calibrate_t;
 
-typedef struct settings_s {
+typedef struct {
 	float gain_normal;
 	float gain_init;
 	float init_time; // Time the algorithm is initializing in seconds.
@@ -36,9 +36,9 @@ typedef struct settings_s {
 	float accel_rejection; // Acceleration in g that the accelerometer should be considered unreliable.
 	float accel_rejection_t; // Time in seconds that acceleration > accel_rejection after which the accelerometer will be rejected.
 
-	calibrate_t gyro_calibrate;
-	calibrate_t accel_calibrate;
-	calibrate_t mag_calibrate;
+	ahrs_calibrate_t gyro_calibrate;
+	ahrs_calibrate_t accel_calibrate;
+	ahrs_calibrate_t mag_calibrate;
 } settings_t;
 
 typedef struct ahrs_s {
@@ -124,11 +124,7 @@ vector_t matrix_vector_product(matrix_t m, vector_t v);
 matrix_t matrix_product(matrix_t ma, matrix_t mb);
 
 // Gets time in seconds since epoch.
-float get_timestamp(float divider);
-
-// Gets current time by subtracting time since epoch by the time the algorithm
-// started.
-float current_time(ahrs_t ahrs);
+float get_timestamp();
 
 // Low pass filter for gyroscope.
 vector_t low_pass_filter(vector_t v);

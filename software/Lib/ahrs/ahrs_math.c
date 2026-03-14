@@ -172,14 +172,6 @@ matrix_t matrix_product(matrix_t ma, matrix_t mb) {
     return return_value;
 }
 
-inline float get_timestamp(float divider) {
-    return 0;
-}
-
-inline float current_time(ahrs_t ahrs) {
-    return get_timestamp(1) - ahrs.start_timestamp;
-}
-
 vector_t low_pass_filter(vector_t v) { // Add low pass filter.
     return v;
 }

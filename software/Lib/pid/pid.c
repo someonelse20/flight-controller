@@ -1,6 +1,6 @@
 #include "pid.h"
 
-float loop(pid_t *pid, float procces_value, float set_point) {
+float loop_pid(pid_t *pid, float procces_value, float set_point) {
 	float error = set_point - procces_value;
 
 	float proportional = pid->kP * error;
@@ -16,7 +16,7 @@ float loop(pid_t *pid, float procces_value, float set_point) {
 	return output * pid->gain;
 }
 
-void reset(pid_t *pid) {
+void reset_pid(pid_t *pid) {
 	pid->integral = 0;
 	pid->previous_error = 0;
 }
