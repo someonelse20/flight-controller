@@ -41,12 +41,14 @@ target_link_directories(
 	${CMAKE_PROJECT_NAME} PRIVATE # Add user defined library search paths
 	Core/Inc/sensor.h
 	Core/Src/sdmmc.h
+	Core/Src/uart.h
 )
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE # Add user sources here
 	Core/Src/sensor.c
 	Core/Src/sdmmc.c
+	Core/Src/uart.c
 
 	Lib/ahrs/ahrs.c
 	Lib/ahrs/ahrs_math.c

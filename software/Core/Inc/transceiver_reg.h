@@ -1,0 +1,24 @@
+#ifndef TRANSCEIVER_REG_H
+#define TRANSCEIVER_REG_H
+
+#define WHO_AM_I_REG 0x00
+
+#define TX_REG 0x01
+#define RX_REG 0x02
+#define TX_SET_REG 0x03
+#define RX_SET_REG 0x04
+
+#define SLEEP_REG 0x05
+#define WAKEUP_REG 0x06
+
+#define SET_ALL_REG 0x07
+#define SET_FREQUENCY_REG 0x08
+#define SET_TX_PARAMS_REG 0x09
+#define SET_LORA_MOD_PARAMS_REG 0x10
+#define SET_LORA_PKT_PARAMS_REG 0x11
+#define SET_LORA_SYMB_NB_TIMEOUT_REG 0x12
+#define SET_ENCRYPT_PARAMS_REG 0x13
+
+#define ENABLE_ENCRYPT_REG 0x14
+
+#endif

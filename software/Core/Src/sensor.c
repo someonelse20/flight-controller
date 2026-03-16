@@ -1,5 +1,6 @@
-#include "sensor.h"
+#include "main.h"
 #include "GNSS.h"
+#include "sensor.h"
 #include "driver_bmp384.h"
 #include "driver_bmp384_interface.h"
 #include "lsm6dso_reg.h"

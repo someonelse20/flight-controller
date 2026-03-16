@@ -8,7 +8,6 @@
 #include "driver_bmp384.h"
 #include <stdint.h>
 
-#define HAL_TIMEOUT 100
 #define LSM6DSO_BOOT_TIME 10
 #define MMC5983_INT_PIN GPIO_PIN_6
 #define BMP384_INT_PIN GPIO_PIN_7

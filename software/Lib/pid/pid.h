@@ -11,10 +11,10 @@ typedef struct {
 	float error;
 	float previous_error;
 	float proportional, integral, derivative;
-} pid_t;
+} pid_control_t;
 
-float loop_pid(pid_t *pid, float procces_value, float set_point);
+float loop_pid(pid_control_t *pid, float procces_value, float set_point);
 
-void reset_pid(pid_t *pid);
+void reset_pid(pid_control_t *pid);
 
 #endif
