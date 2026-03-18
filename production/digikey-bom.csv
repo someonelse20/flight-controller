@@ -1,11 +1,11 @@
-Index,Manufacturer Part Number,Manufacturer Name,Description,Product Notes
-1,MS621FE-FL11E,Seiko Instruments,BATT LITHIUM 3V 5.5MAH COIN,
-2,MAX-M10S-00B,u-blox,"GNSS LCC RX, ROM, TCXO, LNA, SAW",
-3,691137710002,Würth Elektronik,TERM BLK 2POS SIDE ENTRY 5MM PCB,
-4,FIT0587,DFRobot,HIGH QUALITY GOLD PLATED XT60 MA,
-5,LSM6DSOXTR,STMicroelectronics,INEMO INERTIAL MODULE: 3D ACCELE,
-6,MMC5983MA,Memsic Inc.,SEN MR I2C/SPI 16-LGA,
-7,BMP384,Bosch Sensortec,SENSOR 18.13PSIA 10LGA,
-8,U.FL-R-SMT-1(10),Hirose Electric Co Ltd,CONN U.FL RCPT STR 50 OHM SMD,
-9,B4B-XH-A,JST Sales America Inc.,CONN HEADER VERT 4POS 2.5MM,
-10,FXUB66.07.0150C,Taoglas Limited,RF ANT 3.4GHZ FLAT PATCH U.FL,
+Index,Manufacturer Part Number,Manufacturer Name,Description,Quantity,Product Link
+1,MS621FE-FL11E,Seiko Instruments,BATT LITHIUM 3V 5.5MAH COIN,2,https://www.digikey.com/en/products/detail/seiko-instruments/MS621FE-FL11E/1889208,
+2,MAX-M10S-00B,u-blox,"GNSS LCC RX, ROM, TCXO, LNA, SAW",2,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,
+3,691137710002,Würth Elektronik,TERM BLK 2POS SIDE ENTRY 5MM PCB,10,https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/691137710002/6644051
+4,FIT0587,DFRobot,HIGH QUALITY GOLD PLATED XT60 MA,2,https://www.digikey.com/en/products/detail/dfrobot/FIT0587/9559256
+5,LSM6DSOXTR,STMicroelectronics,INEMO INERTIAL MODULE: 3D ACCELE,2,https://www.digikey.com/en/products/detail/stmicroelectronics/LSM6DSOXTR/9841882
+6,MMC5983MA,Memsic Inc.,SEN MR I2C/SPI 16-LGA,2,https://www.digikey.com/en/products/detail/memsic-inc/MMC5983MA/10452795
+7,BMP384,Bosch Sensortec,SENSOR 18.13PSIA 10LGA,2,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP384/13681277
+8,U.FL-R-SMT-1(10),Hirose Electric Co Ltd,CONN U.FL RCPT STR 50 OHM SMD,2,https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570
+9,B4B-XH-A,JST Sales America Inc.,CONN HEADER VERT 4POS 2.5MM,10,https://www.digikey.com/en/products/detail/jst-sales-america-inc/B4B-XH-A/1651047
+10,FXUB66.07.0150C,Taoglas Limited,RF ANT 3.4GHZ FLAT PATCH U.FL,2,https://www.digikey.com/en/products/detail/taoglas-limited/FXUB66-07-0150C/3724559
