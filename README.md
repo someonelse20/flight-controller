@@ -7,7 +7,7 @@ I built this for my project of creating a custom drone from scratch.
 
 ## Usage
 To use plug in a 3 cell lipo battery into the XT60 connector and attach the ESCs to the 4 corner screw terminals. Then plug in the ESC headers into the coresponding ESC headers on the board. 
-Make sure a GPS antenna is connected to the U.FL connector.
+Make sure a GPS antenna is connected to the U.FL connector. Plug in my transceiver module into any of the UART headers.
 A Micro SD card is not strictly required but if inserted the board will log data and error logs. 
 
 ## Project Images
