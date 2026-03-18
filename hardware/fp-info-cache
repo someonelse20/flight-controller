@@ -1,4 +1,4 @@
-27227880353260731
+27250275427287640
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107932,10 +107932,3 @@ Varistor VF
 0
 2
 2
-custom
-ESP32-S3-Super-Mini
-Through hole straight pin header, 1x09, 2.54mm pitch, single row
-Through hole pin header THT 1x09 2.54mm single row
-0
-18
-18
