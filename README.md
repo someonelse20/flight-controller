@@ -11,7 +11,8 @@ Make sure a GPS antenna is connected to the U.FL connector.
 A Micro SD card is not strictly required but if inserted the board will log data and error logs. 
 
 ## BOM
-The full bom from digikey is in the digikey-bom.csv file in production.
-| PCB Assembly        | JLCPCB  | 96.10 | jlcpcb.com                                         |
+The full BOM from digikey is in the digikey-bom.csv file in production.
+
+| PCB Assembly        | JLCPCB  | 96.10 | https://jlcpcb.com                                 |
 |---------------------|---------|-------|----------------------------------------------------|
-| Hand Soldered Parts | Digikey | 65.80 | https://www.digikey.com/en/mylists/list/OHMGL71TDV |
+| Hand Soldered Parts | Digikey | 67.30 | https://www.digikey.com/en/mylists/list/OHMGL71TDV |
