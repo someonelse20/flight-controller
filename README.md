@@ -10,6 +10,10 @@ To use plug in a 3 cell lipo battery into the XT60 connector and attach the ESCs
 Make sure a GPS antenna is connected to the U.FL connector.
 A Micro SD card is not strictly required but if inserted the board will log data and error logs. 
 
+## Project Images
+![alt text](assets/flight-controller_schematic.jpg)
+![alt text](assets/flight-controller_pcb.png)
+
 ## BOM
 The full BOM from digikey is in the digikey-bom.csv file in production.
 
