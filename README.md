@@ -12,3 +12,6 @@ A Micro SD card is not strictly required but if inserted the board will log data
 
 ## BOM
 The full bom from digikey is in the digikey-bom.csv file in production.
+| PCB Assembly        | JLCPCB  | 96.10 | jlcpcb.com                                         |
+|---------------------|---------|-------|----------------------------------------------------|
+| Hand Soldered Parts | Digikey | 65.80 | https://www.digikey.com/en/mylists/list/OHMGL71TDV |
